@@ -208,6 +208,10 @@ resource "helm_release" "this" {
     name  = "region"
     value = "${var.region}"
   }
+  set {
+    name  = "clusterName"
+    value = "${var.cluster_name}"
+  }
 }
 
 resource "null_resource" "deployment_wait" {
